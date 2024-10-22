@@ -9,13 +9,11 @@ service_tickets = {
 # Adds a new ticket to the dictionary with the given ticket ID, customer name, and issue into the selected dictionary
 def open_ticket(ticket_id, customer_name, issue, ticket_dict):
     ticket_dict[ticket_id] = {"Customer": customer_name, "Issue": issue, "Status": "open"}
-    return ticket_dict
 
 # Updates the status of a ticket by finding the ticket ID in the selected dictionary and changing the status to the new status
 def update_ticket_status(ticket_id, new_status, ticket_dict):
     if ticket_id in ticket_dict:
         ticket_dict[ticket_id]["Status"] = new_status
-    return ticket_dict
 
 # Displays all tickets in the selected dictionary, with an optional status filter to only show tickets with a specific status
 def display_tickets(ticket_dict, status_filter=None):
